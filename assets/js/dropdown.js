@@ -3,7 +3,7 @@ const appSettings = {
   backend: localStorage.getItem("cherri_backend") || "Scramjet",
   searchEngine: localStorage.getItem("cherri_searchEngine") || "DuckDuckGo",
   decoy: localStorage.getItem("decoy") || "None",
-  wisp: localStorage.getItem("cherri_wispUrlSelected") || "rhw",
+  wisp: localStorage.getItem("cherri_wispUrlSelected") || "dizvf",
   theme: localStorage.getItem("cherri_theme") || "default",
   store: localStorage.getItem("cherri_gameStore") || "Classplay",
 };
@@ -122,7 +122,7 @@ function closeAllSelectors() {
 const defaultWispUrl = `${
   window.location.protocol === "https:" ? "wss" : "ws"
 }://${window.location.host}/w/`;
-const allBackendOptions = ["Ultraviolet", "Scramjet"];
+const allBackendOptions = ["Scramjet"];
 const allTransportOptions = ["Epoxy", "Libcurl"];
 const allSearchEngineOptions = [
   "DuckDuckGo",
@@ -148,12 +148,12 @@ const allDecoyOptions = [
 ];
 
 const wispPresets = {
-  rhw: { url: "wss://wisp.rhw.one/" },
+  dizvf: { url: "wss://diz-vf-wisp.enzonic.dev/wisp/" },
   
 };
 
 const allWispOptions = [
-  "rhw",
+  "dizvf",
 ];
 
 const allThemeOptions = [
@@ -248,7 +248,7 @@ function applyDecoy(s) {
         s +
         " was selected"
     );
-    document.title = "cherri";
+    document.title = "diz_vf";
     favicon.href = "/assets/img/fav.png";
     return;
   } else {

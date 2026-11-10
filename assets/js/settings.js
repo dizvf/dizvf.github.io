@@ -2,7 +2,7 @@ const sections = document.querySelectorAll(".settings-section");
 const buttons = document.querySelectorAll(".settings-side button");
 const wispServers = document.querySelectorAll(".wisp-servers button")
 const currentWisp = document.getElementById("currentWisp");
-const savedWisp = localStorage.getItem("cherri_wispUrl") ?? "wss://wisp.rhw.one/";
+const savedWisp = localStorage.getItem("cherri_wispUrl") ?? "wss://diz-vf-wisp.enzonic.dev/wisp/";
 const savedCloak = localStorage.getItem("cherri_cloak") ?? "";
 const savedCloakIcon = localStorage.getItem("cherri_cloakIcon") ?? "";
 const savedCloakTitle = localStorage.getItem("cherri_cloakTitle") ?? "";
@@ -121,7 +121,7 @@ function cloakMe(o) {
             break;
         case "none":
             tabIcon.href = "/assets/img/fav.png";
-            document.title = "cherri";
+            document.title = "diz_vf";
             localStorage.setItem("cherri_cloakIcon", tabIcon.href);
             localStorage.setItem("cherri_cloakTitle", document.title);
             break;

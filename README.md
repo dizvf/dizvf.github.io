@@ -1,4 +1,6 @@
-<h1 align="center">Cherri</h1>
+<h1 align="center">diz_vf</h1>
+
+<p align="center"><i>A modified fork of <a href="https://github.com/x8rr/cherri">Cherri</a> by x8rr, licensed under AGPL-3.0. Runs on Scramjet; the Wisp backend is hosted separately on Enzonic.</i></p>
 
 <p align="center">
   <img alt="image" src="https://github.com/user-attachments/assets/d0532d69-892b-4b08-ae29-f2191295fbf7" />

@@ -2,7 +2,7 @@ let aTab = 0;
 let tabCounter = 1;
 let bTabs = [];
 const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
-const wispUrl = localStorage.getItem("cherri_wispUrl") || "wss://wisp.rhw.one/";
+const wispUrl = localStorage.getItem("cherri_wispUrl") || "wss://diz-vf-wisp.enzonic.dev/wisp/";
 const bareUrl = "https://useclassplay.vercel.app/fq/";
 
 let searchE;
@@ -154,17 +154,7 @@ function nav(i) {
 
   cTab.url = url;
 
-  if (
-    localStorage.getItem("cherri_backend") === "Scramjet" ||
-    localStorage.getItem("cherri_backend") === "scramjet" ||
-    !localStorage.getItem("cherri_backend")
-  ) {
-    fUrl = scramjet.encodeUrl(url);
-  } else if (localStorage.getItem("cherri_backend") === "Ultraviolet") {
-    fUrl = "/uv/service/" + __uv$config.encodeUrl(url);
-  } else {
-    fUrl = scramjet.encodeUrl(url);
-  }
+  fUrl = scramjet.encodeUrl(url);
 
   go(fUrl);
 }
@@ -174,16 +164,8 @@ function updateUrlFromIframe(viewframe) {
     const cTab = bTabs.find((t) => t.id === aTab);
     if (!cTab) return;
 
-    let decodedUrl;
     const currentSrc = viewframe.src;
-
-    if (localStorage.getItem("cherri_backend") === "Ultraviolet") {
-      if (currentSrc.includes("/uv/service/")) {
-        decodedUrl = __uv$config.decodeUrl(currentSrc.split("/uv/service/")[1]);
-      }
-    } else {
-      decodedUrl = scramjet.decodeUrl(currentSrc);
-    }
+    const decodedUrl = scramjet.decodeUrl(currentSrc);
 
     if (decodedUrl && decodedUrl !== cTab.url) {
       cTab.url = decodedUrl;
@@ -271,15 +253,7 @@ function b() {
   cTab.historyIndex--;
   const u = cTab.history[cTab.historyIndex];
   cTab.url = u;
-  let furl;
-  const ba = localStorage.getItem("cherri_backend");
-  if (ba.toLowerCase() === "scramjet") {
-    furl = scramjet.encodeUrl(u);
-  } else if (ba.toLowerCase() === "ultraviolet") {
-    furl = __uv$config.prefix + __uv$config.encodeUrl(u);
-  } else {
-    furl = scramjet.encodeUrl(u);
-  }
+  const furl = scramjet.encodeUrl(u);
 
   go(furl);
 }
@@ -290,15 +264,7 @@ function f() {
   cTab.historyIndex++;
   const u = cTab.history[cTab.historyIndex];
   cTab.url = u;
-  let furl;
-  const ba = localStorage.getItem("cherri_backend");
-  if (ba.toLowerCase() === "scramjet") {
-    furl = scramjet.encodeUrl(u);
-  } else if (ba.toLowerCase() === "ultraviolet") {
-    furl = __uv$config.prefix + __uv$config.encodeUrl(u);
-  } else {
-    furl = scramjet.encodeUrl(u);
-  }
+  const furl = scramjet.encodeUrl(u);
 
   go(furl);
 }
@@ -357,19 +323,11 @@ async function fixProxy() {
 
   await navigator.serviceWorker.register("/sw.js")
 
-  showToast("success", "Service workers reregistered. (1/2)", "fas fa-check-circle");
+  showToast("success", "Service workers reregistered.", "fas fa-check-circle");
   console.log(
-    "%c[SUCCESS]" + "%c Service workers reregistered. (1/2)",
+    "%c[SUCCESS]" + "%c Service workers reregistered.",
     "color: lime; font-weight: bold;",
     "color: white; font-weight: normal;"
   );
 
-  await navigator.serviceWorker.register("/uv/sw.js")
-
-  showToast("success", "Service workers reregistered. (2/2)", "fas fa-check-circle");
-  console.log(
-    "%c[SUCCESS]" + "%c Service workers reregistered. (2/2)",
-    "color: lime; font-weight: bold;",
-    "color: white; font-weight: normal;"
-  );
 }
