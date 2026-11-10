@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image/svg+xml" href="/assets/fav.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/img/cornflower.svg">
     <title>diz_vf</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="/baremux/index.js"></script>
@@ -51,7 +51,7 @@
         data-website-id="aa852720-724b-4441-be4c-6db9ef160eb9"></script>
     <link rel="stylesheet" href="/assets/css/font.css">
     <link rel="stylesheet" href="/assets/icons/fonts/remixicon.css">
-    <link rel="stylesheet" href="/assets/css/diz.css?v=4">
+    <link rel="stylesheet" href="/assets/css/diz.css?v=6">
 
 </html>
 </head>
@@ -60,13 +60,14 @@
     <button id="gohomeblock" onclick="navTo('home?launch=1')">
         <i class="ri-home-4-line"></i>
     </button>
+    <div id="diz-edge" aria-hidden="true"></div>
     <nav>
         <ul>
             <li style="width: 40px;">
                 <a onclick="navTo('home?launch=1')" style="margin-top: 7.5px; margin-left: 10px;" href="#"
                     data-page="home">
                     <div class="hcontainer">
-                        <img src="/assets/img/fav.png" style="height: 24px; margin-top: -1px; margin-right: -0px;"
+                        <img src="/assets/img/cornflower.svg" style="height: 24px; margin-top: -1px; margin-right: -0px;"
                             alt="">
                     </div>
                 </a>
@@ -153,14 +154,6 @@
                 placeholder="search not ready yet!" />
             <i style="margin-right: 1%; animation: rotationlmao .45s linear infinite forwards; transition: 0.2s;"
                 class="fas fa-spinner-third"></i>
-        </div>
-        <div class="diz-cards">
-            <button class="diz-card" onclick="toggleGames()"><i class="ri-gamepad-line"></i><div class="t"><b>Games</b><span>700+ games, ready to play</span></div></button>
-            <button class="diz-card" onclick="toggleApps()"><i class="ri-apps-line"></i><div class="t"><b>Apps</b><span>Your favorite sites and tools</span></div></button>
-            <button class="diz-card" onclick="navTo('movies')"><i class="ri-video-line"></i><div class="t"><b>Movies</b><span>Watch movies and shows</span></div></button>
-            <button class="diz-card" onclick="navTo('assistant'); showToast('success', 'AI is in beta! Report bugs on the Discord/Repo', 'fas fa-exclamation-triangle')"><i class="ri-robot-2-line"></i><div class="t"><b>AI</b><span>Ask the assistant anything</span></div></button>
-            <button class="diz-card" onclick="navTo('chatrooms')"><i class="ri-chat-1-line"></i><div class="t"><b>Chat</b><span>Talk with other users</span></div></button>
-            <button class="diz-card" onclick="toggleSettings()"><i class="ri-settings-3-line"></i><div class="t"><b>Settings</b><span>Themes, cloak, proxy</span></div></button>
         </div>
         <span class="online-users"><b id="user-count">0</b> users currently online</span>
     </div>

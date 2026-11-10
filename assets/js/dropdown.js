@@ -249,7 +249,7 @@ function applyDecoy(s) {
         " was selected"
     );
     document.title = "diz_vf";
-    favicon.href = "/assets/img/fav.png";
+    favicon.href = "/assets/img/cornflower.svg";
     return;
   } else {
     document.title = selected.title;

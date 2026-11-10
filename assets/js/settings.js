@@ -120,7 +120,7 @@ function cloakMe(o) {
             localStorage.setItem("cherri_cloakTitle", document.title);
             break;
         case "none":
-            tabIcon.href = "/assets/img/fav.png";
+            tabIcon.href = "/assets/img/cornflower.svg";
             document.title = "diz_vf";
             localStorage.setItem("cherri_cloakIcon", tabIcon.href);
             localStorage.setItem("cherri_cloakTitle", document.title);
